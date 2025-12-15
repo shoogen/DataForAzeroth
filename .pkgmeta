@@ -1,2 +1,5 @@
+manual-changelog: CHANGELOG.txt
 ignore:
   - generate.mjs
+  - README.md
+  - CHANGELOG.txt
