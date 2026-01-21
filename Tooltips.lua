@@ -98,7 +98,11 @@ local function AttachCharacterData(self, guid)
                 self:AddLine(GetProgressColorText(data[1],app.MAX_SCORE));
             end
             if not DFA_SETTINGS.HideRank then
-                self:AddLine(L.RANK_FORMAT:format(GetRankColorText(data[2]), GetRankColorText(data[3]), GetRankColorText(data[5])));
+                if data[4] > 0 then
+                    self:AddLine(L.RANK_CONNECTED_FORMAT:format(GetRankColorText(data[2]), GetRankColorText(data[3]), GetRankColorText(data[4]), GetRankColorText(data[5])));
+                else
+                    self:AddLine(L.RANK_FORMAT:format(GetRankColorText(data[2]), GetRankColorText(data[3]), GetRankColorText(data[5])));
+                end
             end
         elseif app.ALTS[guid] == nil then
             -- the target could be on an alt, whisper them ONCE to get their GUID

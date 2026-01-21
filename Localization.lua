@@ -4,6 +4,7 @@ local L = {}; app.L = L;
 -- English Strings
 L.DATAFORAZEROTH = "|TInterface/Addons/DataForAzeroth/assets/Logo:0|t Data for Azeroth";
 L.RANK_FORMAT = "World #%s  Region #%s  Realm #%s";
+L.RANK_CONNECTED_FORMAT = "World #%s  Region #%s  Connected #%s  Realm #%s";
 
 L.SETTINGS_GENERAL = "General";
 L.SETTINGS_TOOLTIPS = "Tooltips";
@@ -28,6 +29,7 @@ local locale = GetLocale();
 local lang = locale:sub(1,2);
 if lang == "es" then
     L.RANK_FORMAT = "Mundo #%s  Región #%s  Reino #%s";
+    L.RANK_CONNECTED_FORMAT = "Mundo #%s  Región #%s  Conectado #%s  Reino #%s";
     L.SETTINGS_GENERAL = "General";
     L.SETTINGS_TOOLTIPS = "Descripciones";
     L.ShareAlts_Setting = "Compartir alters con otros jugadores";
@@ -42,6 +44,7 @@ if lang == "es" then
     L.HideRank_Tooltip = "Oculta las clasificaciones Mundo/Región/Reino en la descripción de Data for Azeroth.";
 elseif lang == "de" then
     L.RANK_FORMAT = "Welt #%s  Region #%s  Server #%s";
+    L.RANK_CONNECTED_FORMAT = "Welt #%s  Region #%s  Verbunden #%s  Server #%s";
     L.SETTINGS_GENERAL = "Allgemein";
     L.SETTINGS_TOOLTIPS = "Tooltips";
     L.ShareAlts_Setting = "Alts mit anderen Spielern teilen";
@@ -56,6 +59,7 @@ elseif lang == "de" then
     L.HideRank_Tooltip = "Verbirgt die Welt-/Region-/Server-Ranglisten im Data for Azeroth Tooltip.";
 elseif lang == "fr" then
     L.RANK_FORMAT = "Monde #%s  Région #%s  Royaume #%s";
+    L.RANK_CONNECTED_FORMAT = "Monde #%s  Région #%s  Connecté #%s  Royaume #%s";
     L.SETTINGS_GENERAL = "Général";
     L.SETTINGS_TOOLTIPS = "Infobulles";
     L.ShareAlts_Setting = "Partager les rerolls avec d'autres joueurs";
@@ -70,6 +74,7 @@ elseif lang == "fr" then
     L.HideRank_Tooltip = "Masque les classements Monde/Région/Royaume dans l'infobulle Data for Azeroth.";
 elseif lang == "it" then
     L.RANK_FORMAT = "Mondo #%s  Regione #%s  Regno #%s";
+    L.RANK_CONNECTED_FORMAT = "Mondo #%s  Regione #%s  Connesso #%s  Regno #%s";
     L.SETTINGS_GENERAL = "Generale";
     L.SETTINGS_TOOLTIPS = "Suggerimenti";
     L.ShareAlts_Setting = "Condividi Alt con altri giocatori";
@@ -84,6 +89,7 @@ elseif lang == "it" then
     L.HideRank_Tooltip = "Nasconde le classifiche Mondo/Regione/Reame nel suggerimento Data for Azeroth.";
 elseif lang == "pt" then
     L.RANK_FORMAT = "Mundo #%s  Região #%s  Reino #%s";
+    L.RANK_CONNECTED_FORMAT = "Mundo #%s  Região #%s  Conectado #%s  Reino #%s";
     L.SETTINGS_GENERAL = "Geral";
     L.SETTINGS_TOOLTIPS = "Dicas";
     L.ShareAlts_Setting = "Compartilhar Alts com outros jogadores";
@@ -98,6 +104,7 @@ elseif lang == "pt" then
     L.HideRank_Tooltip = "Oculta as classificações Mundo/Região/Reino na dica de Data for Azeroth.";
 elseif lang == "ru" then
     L.RANK_FORMAT = "Мир #%s  Регион #%s  Сервер #%s";
+    L.RANK_CONNECTED_FORMAT = "Мир #%s  Регион #%s  Связано #%s  Сервер #%s";
     L.SETTINGS_GENERAL = "Общее";
     L.SETTINGS_TOOLTIPS = "Подсказки";
     L.ShareAlts_Setting = "Делиться альтами с другими игроками";
@@ -112,6 +119,7 @@ elseif lang == "ru" then
     L.HideRank_Tooltip = "Скрывает рейтинги Мир/Регион/Сервер в подсказке Data For Azeroth.";
 elseif lang == "ko" then
     L.RANK_FORMAT = "월드 #%s  지역 #%s  영역 #%s";
+    L.RANK_CONNECTED_FORMAT = "월드 #%s  지역 #%s  연결 #%s  영역 #%s";
     L.SETTINGS_GENERAL = "일반";
     L.SETTINGS_TOOLTIPS = "툴팁";
     L.ShareAlts_Setting = "다른 플레이어와 부캐 공유";
@@ -126,6 +134,7 @@ elseif lang == "ko" then
     L.HideRank_Tooltip = "아제로스를 위한 데이터 툴팁에서 월드/지역/영역 순위를 숨깁니다.";
 elseif locale == "zhCN" then
     L.RANK_FORMAT = "世界 #%s  地区 #%s  领域 #%s";
+    L.RANK_CONNECTED_FORMAT = "世界 #%s  地区 #%s  关联 #%s  领域 #%s";
     L.SETTINGS_GENERAL = "常规";
     L.SETTINGS_TOOLTIPS = "提示";
     L.ShareAlts_Setting = "与其他玩家分享小号";
@@ -140,6 +149,7 @@ elseif locale == "zhCN" then
     L.HideRank_Tooltip = "在艾泽拉斯数据提示中隐藏世界/地区/领域排名。";
 elseif locale == "zhTW" then
     L.RANK_FORMAT = "世界 #%s  地區 #%s  領域 #%s";
+    L.RANK_CONNECTED_FORMAT = "世界 #%s  地區 #%s  關聯 #%s  領域 #%s";
     L.SETTINGS_GENERAL = "一般";
     L.SETTINGS_TOOLTIPS = "提示";
     L.ShareAlts_Setting = "與其他玩家分享小號";
