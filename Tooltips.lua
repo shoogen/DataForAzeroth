@@ -85,7 +85,7 @@ local function GetRankColorText(rank)
     return "??";
 end
 local function AttachCharacterData(self, guid)
-    if guid then
+    if guid and not issecretvalue(guid) then
         -- Uncomment for debugging
         -- self:AddDoubleLine("GUID", guid);
         guid = app.ALTS[guid] or guid; -- lookup main character's GUID, if it exists
@@ -147,11 +147,7 @@ local function AddGuildRosterTooltip()
             button:HookScript("OnEnter", function(self)
                 local memberInfo = self.GetMemberInfo and self:GetMemberInfo()
                 if not memberInfo then return end
-
-                local guid = memberInfo.guid
-                if guid then
-                    AttachCharacterData(GameTooltip, guid)
-                end
+                AttachCharacterData(GameTooltip, memberInfo.guid)
 
                 GameTooltip:Show()
             end)
