@@ -36,14 +36,16 @@ app:OnEvent("PLAYER_LOGIN", function(...)
         print("Data for Azeroth: Could not find player's region " .. region);
     end
 
-    -- If the current character is found, track it as main in a saved variable
     local myguid = UnitGUID("player");
-    if myguid and app.CHARACTER_DATA[myguid:gsub("Player%-", "")] then
-        DFA_MAIN = myguid;
-    end
+    if myguid and not issecretvalue(myguid) then
+        -- If the current character is found, track it as main in a saved variable
+        if app.CHARACTER_DATA[myguid:gsub("Player%-", "")] then
+            DFA_MAIN = myguid;
+        end
 
-    -- setup alts lookup table
-    if DFA_MAIN then
-        app.ALTS[myguid] = DFA_MAIN;
+        -- setup alts lookup table
+        if DFA_MAIN then
+            app.ALTS[myguid] = DFA_MAIN;
+        end
     end
 end)

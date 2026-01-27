@@ -12,7 +12,10 @@ end
 
 local function announce(channel, to)
     if DFA_MAIN and DFA_SETTINGS.ShareAlts then
-        C_ChatInfo.SendAddonMessage("DFA", "IAM " .. DFA_MAIN .. " " .. UnitGUID("player"), channel, to);
+        local guid = UnitGUID("player");
+        if guid and not issecretvalue(guid) then
+            C_ChatInfo.SendAddonMessage("DFA", "IAM " .. DFA_MAIN .. " " .. guid, channel, to);
+        end
     end
 end
 
@@ -27,8 +30,8 @@ app:OnEvent("CHAT_MSG_ADDON", function(prefix, text, channel, sender, target, ..
         app.ALTS[words[3]] = words[2];
 
         -- attempt to refresh the current tooltip
-        local _, unit = GameTooltip:GetUnit()
-        if unit then GameTooltip:SetUnit(unit) end
+        local _, unit = GameTooltip:GetUnit();
+        if unit and not issecretvalue(unit) then GameTooltip:SetUnit(unit) end
     elseif words[1] == "WHO" then
         -- our GUID was requested
         announce("WHISPER", sender);
