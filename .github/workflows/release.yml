@@ -29,7 +29,7 @@ jobs:
           node-version: '22'
 
       - name: Generate db files
-        run: node generate.mjs
+        run: node generate.mjs ${{ secrets.USER_AGENT }}
 
       # prep nightly build suffix
       - name: Setup Build Suffix

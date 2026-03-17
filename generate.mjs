@@ -4,7 +4,11 @@ import { Readable } from 'stream';
 import { finished } from 'stream/promises';
 
 async function download(file) {
-    const response = await fetch('https://www.dataforazeroth.com/addon/' + file);
+    const params = { method: 'GET' };
+    const arg1 = process?.argv[2];
+    if (arg1) params.headers = { 'User-Agent': arg1 };
+
+    const response = await fetch('https://www.dataforazeroth.com/addon/' + file, params);
     if (response.status !== 200) throw 'HTTP failed ' + response.status;
 
     const stream = fs.createWriteStream('db/' + file);
