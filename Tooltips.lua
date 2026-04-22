@@ -61,7 +61,7 @@ local ProgressColors = setmetatable({
 });
 
 local function CanAttachTooltips()
-    return true;
+    return not IsInInstance();
 end
 local function ClearTooltip(self)
     self.DataForAzerothProcessing = nil;
